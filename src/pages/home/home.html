@@ -1,14 +1,24 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Ionic Blank
+      Login with Facebook
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <button ion-button (click)="Login()">Login with Facebook</button>
+
+  <ion-card *ngIf="userDate">
+    <img [src]="userDate.picture"/>
+    <ion-card-content>
+      <ion-card-title>
+        Nome: <b>{{ userDate.name }}</b>
+        </ion-card-title>
+      <p>Email: {{ userDate.email }}</p>
+      <p>Id: {{ userDate.id }}</p>
+    </ion-card-content>
+  </ion-card>
+
+
 </ion-content>
